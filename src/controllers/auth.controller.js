@@ -23,6 +23,30 @@ export const register = async (req, res) => {
     }
 };
 
-export const login = (req, res) => {
-    res.send('login');
+export const login = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const userFind = await User.findOne({ email });
+        if(!userFind) return res.status(400).json({ message: 'User not found' });
+
+        const isMatch = await bcrypt.compare(password, userFind.password);
+        if(!isMatch) return res.status(400).json({ message: 'Invalid password' });
+
+        const token = await createdAccessToken({id: userFind._id});
+        res.cookie('jwt', token);
+        res.json({
+            id: userFind._id,
+            name: userFind.name,
+            email: userFind.email,
+            createdAt: userFind.createdAt,
+            updatedAt: userFind.updatedAt,
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+export const logout = (req, res) => {
+    res.cookie('jwt', '', { expires: new Date(0) });
+    return res.sendStatus(200);
 }
