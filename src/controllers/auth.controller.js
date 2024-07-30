@@ -10,7 +10,7 @@ export const register = async (req, res) => {
         const user = new User({ name, email, password: passwordHash, });
         const userSaved = await user.save();
         const token = await createdAccessToken({id: userSaved._id});
-        res.cookie('jwt', token);
+        res.cookie('token', token);
         res.json({
             id: userSaved._id,
             name: userSaved.name,
@@ -33,7 +33,7 @@ export const login = async (req, res) => {
         if(!isMatch) return res.status(400).json({ message: 'Invalid password' });
 
         const token = await createdAccessToken({id: userFind._id});
-        res.cookie('jwt', token);
+        res.cookie('token', token);
         res.json({
             id: userFind._id,
             name: userFind.name,
@@ -47,6 +47,20 @@ export const login = async (req, res) => {
 }
 
 export const logout = (req, res) => {
-    res.cookie('jwt', '', { expires: new Date(0) });
+    res.cookie('token', '', { expires: new Date(0) });
     return res.sendStatus(200);
+}
+
+export const profile = async (req, res) => {
+    const userFound = await User.findById(req.user.id);
+    if(!userFound) return res.status(400).json({ message: 'User not found' });
+
+    return res.json({ 
+        id: userFound._id,
+        name: userFound.name,
+        email: userFound.email,
+        createdAt: userFound.createdAt,
+        updatedAt: userFound.updatedAt,
+    });
+    res.send('Profile');
 }
