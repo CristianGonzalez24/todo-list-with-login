@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthContext';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const RegisterPage = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { signUp, isAuth, errors: authErrors } = useAuth();
+    const { signUp, isAuth, errors: registerErrors } = useAuth();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,8 +23,8 @@ const RegisterPage = () => {
     return (
         <div className="bg-zinc-800 max-w-md mx-auto p-10 rounded-md">
             {
-                authErrors.map((error, index) => {
-                    return <div className="bg-red-500 text-white p-2" key={index}>{error}</div>
+                registerErrors.map((error, index) => {
+                    return <div className="bg-red-500 text-white p-2 my-2" key={index}>{error}</div>
                 })
             }
             <form onSubmit={onSubmit}>
@@ -55,10 +55,9 @@ const RegisterPage = () => {
                     errors.password && <p className="text-red-500">Password is required</p>
                 }
 
-                <button type="submit">
-                    Submit
-                </button>
+                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Register</button>
             </form>
+                <p className="flex gap-x-2 justify-between">Already have an account?<Link className="text-blue-500" to="/login">Login</Link></p>
         </div>
     )
 }
