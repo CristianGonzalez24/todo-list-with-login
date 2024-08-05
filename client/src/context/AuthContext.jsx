@@ -15,6 +15,7 @@ export const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState({});
     const [isAuth, setIsAuth] = useState(false);
+    const [errors, setErrors] = useState([]);
 
     const signUp = async (user) => {
         try {
@@ -23,7 +24,7 @@ export const AuthProvider = ({children}) => {
             setUser(res.data);
             setIsAuth(true);
         } catch (error) {
-            console.log(error);
+            setErrors(error.response.data);
         }
     };
 
@@ -31,7 +32,8 @@ export const AuthProvider = ({children}) => {
         <AuthContext.Provider value={{
             signUp,
             user,
-            isAuth
+            isAuth,
+            errors
         }}>
             {children}
         </AuthContext.Provider>
