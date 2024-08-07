@@ -6,7 +6,6 @@ const LoginPage = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const { signIn, errors: signInErrors } = useAuth();
-  // const navigate = useNavigate();
 
   const onSubmit = handleSubmit( async (data) => {
     await signIn(data)

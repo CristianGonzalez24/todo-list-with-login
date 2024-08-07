@@ -1,5 +1,6 @@
 import {createContext, useState, useContext, useEffect} from 'react';
-import { registerRequest, loginRequest } from './../api/auth';
+import { registerRequest, loginRequest, verifyTokenRequest } from './../api/auth';
+import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 
@@ -33,7 +34,8 @@ export const AuthProvider = ({children}) => {
     const signIn = async (user) => {
         try {
             const res = await loginRequest(user)
-            console.log(res);
+            setUser(res.data);
+            setIsAuth(true);
         } catch (error) {
             if(Array.isArray(error.response.data)) {
                 setErrors(error.response.data);
@@ -43,14 +45,32 @@ export const AuthProvider = ({children}) => {
         }
     };
 
-    useEffect(() => {
-        if(errors.length > 0) {
-            const timer = setTimeout(() => {
-                setErrors([]);
-            }, 8000);
-            return () => clearTimeout(timer);
+useEffect(() => {
+    if(errors.length > 0) {
+        const timer = setTimeout(() => {
+            setErrors([]);
+        }, 8000);
+        return () => clearTimeout(timer);
+    }
+}, [errors]);
+
+useEffect(() => {
+    async function checkLogin() {
+        const cookies = Cookies.get('token');
+        if(cookies.token) {
+            try {
+                const res = await verifyTokenRequest(cookies.token);
+                if(!res.data) return setIsAuth(false);
+                setUser(res.data);
+                setIsAuth(true);
+            } catch (error) {
+                setUser({});
+                setIsAuth(false);
+            }
         }
-    }, [errors]);
+    }
+    checkLogin();
+}, []);
 
     return (
         <AuthContext.Provider value={{
