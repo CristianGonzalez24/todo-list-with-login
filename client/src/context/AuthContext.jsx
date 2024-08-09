@@ -46,51 +46,58 @@ export const AuthProvider = ({children}) => {
         }
     };
 
-useEffect(() => {
-    if(errors.length > 0) {
-        const timer = setTimeout(() => {
-            setErrors([]);
-        }, 8000);
-        return () => clearTimeout(timer);
-    }
-}, [errors]);
+    const logout = () => {
+        Cookies.remove('token');
+        setIsAuth(false);
+        setUser({});
+    };
 
-useEffect(() => {
-    async function checkLogin() {
-        const cookies = Cookies.get();
-        if(!cookies.token) {
-            setIsAuth(false);
-            setLoading(false);
-            return setUser({});
+    useEffect(() => {
+        if(errors.length > 0) {
+            const timer = setTimeout(() => {
+                setErrors([]);
+            }, 8000);
+            return () => clearTimeout(timer);
         }
-        try {
-            const res = await verifyTokenRequest(cookies.token);
-            if(!res.data) {
+    }, [errors]);
+
+    useEffect(() => {
+        async function checkLogin() {
+            const cookies = Cookies.get();
+            if(!cookies.token) {
                 setIsAuth(false);
                 setLoading(false);
-
-                return;
+                return setUser({});
             }
-            setIsAuth(true);
-            setUser(res.data);
-            setLoading(false);
-        } catch (error) {
-            setIsAuth(false);
-            setUser({});
-            setLoading(false);
+            try {
+                const res = await verifyTokenRequest(cookies.token);
+                if(!res.data) {
+                    setIsAuth(false);
+                    setLoading(false);
+
+                    return;
+                }
+                setIsAuth(true);
+                setUser(res.data);
+                setLoading(false);
+            } catch (error) {
+                setIsAuth(false);
+                setUser({});
+                setLoading(false);
+            }
         }
-    }
-    checkLogin();
-}, []);
+        checkLogin();
+    }, []);
 
     return (
         <AuthContext.Provider value={{
             signUp,
             signIn,
+            logout,
             user,
             isAuth,
             errors,
-            loading
+            loading,
         }}>
             {children}
         </AuthContext.Provider>
