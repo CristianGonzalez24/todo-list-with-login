@@ -7,7 +7,9 @@ const NavBar = () => {
 
     return (
         <nav className="bg-zinc-700 my-3 flex justify-between py-5 px-10 rounded-md">
-            <Link to="/"><h1 className="text-3xl font-bold">ToDo App</h1></Link>
+            <Link to={
+                isAuth ? "/tasks" : "/"
+            }><h1 className="text-3xl font-bold">Task Manager</h1></Link>
             <ul className="flex gap-5">
                 {isAuth ? 
                 (
@@ -21,8 +23,8 @@ const NavBar = () => {
                 : 
                 (
                     <>
-                    <li><Link to="/register" className="bg-indigo-500 px-4 py-1 rounded-md">Register</Link></li>
-                    <li><Link to="/login" className="bg-indigo-500 px-4 py-1 rounded-md">Login</Link></li>
+                    <li><Link to="/register" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Register</Link></li>
+                    <li><Link to="/login" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Login</Link></li>
                     </>
                 )}
             </ul>
