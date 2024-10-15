@@ -38,3 +38,34 @@ Follow these steps to get the project up and running on your local machine:
    cd task-manager-app
 
 2. Install dependencies:
+   ```bash
+   npm install
+
+3. Set up environment variables:
+
+   Create a .env file in the root directory and add the following:
+   ```bash
+   MONGO_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
+
+4. Run the project in development mode:
+   ```bash
+   npm run dev
+The app should now be running at http://localhost:3000.
+
+## Usage
+- Register: Create a new account to start managing your tasks.
+- Login: Log in with your credentials.
+- Manage Tasks: Add, edit, and delete tasks as needed.
+
+## Contributing
+Feedback and suggestions are always welcome! If you have any ideas for improving the app, feel free to:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/your-feature-name).
+3. Commit your changes (git commit -m 'Add new feature').
+4. Push to the branch (git push origin feature/your-feature-name).
+5. Open a Pull Request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
