@@ -43,18 +43,18 @@ const TaskFormPage = () => {
     })
     return (
     <div className="flex h-[calc(100vh-100px)] items-center justify-center">
-        <div className="bg-zinc-800 max-w-md mx-auto p-10 rounded-md">
+        <div className="bg-gray-50 max-w-md mx-auto p-10 rounded-md">
             <form onSubmit={onSubmit}>
-                <label htmlFor="title">Title</label>
-                <input type="text" placeholder="Title" {...register('title')} autoFocus  className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"/>
+                <label htmlFor="title" className="text-[#002765] font-semibold">Title</label>
+                <input type="text" placeholder="Title" {...register('title')} autoFocus  className="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-md my-2"/>
         
-                <label htmlFor="description">Description</label>
-                <textarea rows="5" placeholder="Description" {...register('description')} className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"/>
+                <label htmlFor="description" className="text-[#002765] font-semibold">Description</label>
+                <textarea rows="5" placeholder="Description" {...register('description')} className="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-md my-2"/>
         
-                <label htmlFor="date">Date</label>
-                <input type="date" {...register('date')} className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2" required/>
+                <label htmlFor="date" className="text-[#002765] font-semibold">Date</label>
+                <input type="date" {...register('date')} className="w-full bg-gray-200 text-gray-700 px-4 py-2 rounded-md my-2" required/>
         
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Save</button>
+                <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md">Save</button>
             </form>
         </div>
     </div>

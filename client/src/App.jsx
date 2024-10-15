@@ -15,7 +15,7 @@ const App = () => {
     <AuthProvider>
       <TaskProvider>
         <Router>
-          <main className='container mx-auto px-10'>
+          <main className=''>
             <NavBar/>
             <Routes>
               <Route path='/' element={<HomePage/>}/>
