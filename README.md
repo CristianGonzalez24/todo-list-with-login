@@ -79,6 +79,10 @@ Follow these steps to get the project up and running on your local machine:
 - Login: Log in with your credentials.
 - Manage Tasks: Add, edit, and delete tasks as needed.
 
+## Screenshots
+
+![ToDoApp](/public/preview.JPG)
+
 ## Contributing
 Feedback and suggestions are always welcome! If you have any ideas for improving the app, feel free to:
 
