@@ -81,7 +81,7 @@ Follow these steps to get the project up and running on your local machine:
 
 ## Screenshots
 
-![ToDoApp](/public/preview.JPG)
+![ToDoApp](client/public/Preview.JPG)
 
 ## Contributing
 Feedback and suggestions are always welcome! If you have any ideas for improving the app, feel free to:
