@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
+process.loadEnvFile();
 
 export const TOKEN_KEY = process.env.JWT_SECRET;
