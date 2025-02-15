@@ -97,7 +97,7 @@ Create a `.env` file in the **root directory** and add:
 
 ## 🖼 Screenshots
 
-![To-Do App](client/public/Preview.JPG)
+![To-Do App](docs/toDo-app-screenshot.webp)
 
 ---
 
