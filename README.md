@@ -1,96 +1,133 @@
-# Task Manager App
+# 📌 Task Manager App
 
-A **To-Do App** designed to help users keep track of their tasks. It allows users to add, edit, and delete tasks and saves them until they are completed. The app also features user authentication, so each user can log in and access their personalized task list.
+A **To-Do App** designed to help users keep track of their tasks. It allows users to add, edit, and delete tasks while ensuring secure authentication for personalized task management.
 
-## Features
+---
 
-- **Add Tasks:** Users can create new tasks and store them until completion.
-- **Edit Tasks:** Tasks can be modified or updated.
-- **Delete Tasks:** Completed or unnecessary tasks can be removed.
-- **User Authentication:** Secure login system for each user.
-- **User Registration:** New users can create an account to manage their own tasks.
-- **Personal Task Lists:** Each user's tasks are stored separately and accessed only when logged in.
+## 🚀 Features
 
-## Tech Stack
+✅ **Task Management**  
+✔ Add, edit, and delete tasks.  
+✔ Tasks are saved until completed.
 
-- **MongoDB** - Database for storing tasks and user data.
-- **Express.js** - Backend framework for handling API requests.
-- **React.js** - Frontend framework for building the user interface.
-- **Node.js** - JavaScript runtime for server-side logic.
-- **Tailwind CSS** - Utility-first CSS framework for styling.
-- **Vite** - Fast build tool for development and production.
+✅ **User Authentication**  
+✔ Secure login and registration system.  
+✔ JWT-based authentication.
 
-## Requirements
+✅ **Personalized Task Lists**  
+✔ Each user has a separate list of tasks.  
+✔ Only accessible after logging in.
 
-To run this project locally, you will need the following:
+✅ **Responsive UI**  
+✔ Clean and modern interface built with React & Tailwind CSS.
+
+---
+
+## 🛠 Tech Stack
+
+| Technology    | Purpose                       |
+|--------------|-----------------------------|
+| **MongoDB**  | Database for storing tasks and user data |
+| **Express.js** | Backend framework for API requests |
+| **React.js**  | Frontend framework for the UI |
+| **Node.js**  | JavaScript runtime for the server |
+| **Tailwind CSS** | Styling framework for responsive design |
+| **Vite**  | Development & build tool |
+
+---
+
+## ⚙ Requirements
+
+Before running the project, make sure you have:
 
 - **Node.js** (v14 or higher)
-- **MongoDB** (running locally or via a service like MongoDB Atlas)
+- **MongoDB** (local instance or MongoDB Atlas)
 
-## Installation
+---
 
-Follow these steps to get the project up and running on your local machine:
+## 📥 Installation & Setup
 
-1. Clone the repository:
-
+### 1️⃣ Clone the Repository
 ```bash
    git clone https://github.com/CristianGonzalez24/todo-list-with-login.git
    cd todo-list-with-login
 ```
 
-2. Install dependencies for both the backend and the frontend:
-   
-   Install backend dependencies
+### 2️⃣ Install Dependencies
+**Backend:**
 ```bash
    npm install
 ```
-   
-   Install frontend dependencies
+
+**Frontend:**
 ```bash
-   cd /client
+   cd client
    npm install
 ```
 
-3. Set up environment variables:
-
-   Create a .env file in the root directory and add the following:
+### 3️⃣ Configure Environment Variables
+Create a `.env` file in the **root directory** and add:
 ```bash
    MONGO_URI=your_mongodb_uri
    JWT_SECRET=your_jwt_secret
 ```
 
-4. Start the backend server:
-
-   In the backend directory, run the following command to start the backend server:
+### 4️⃣ Start the Backend Server
 ```bash
    npm run dev
 ```
-   This will start the server on http://localhost:4000 or any other port specified in your backend configuration.
+🔹 Runs on **http://localhost:4000** (or the port specified in your config).
 
-5. Start the frontend development server:
-   In a new terminal, navigate to the frontend directory and run:
+### 5️⃣ Start the Frontend
 ```bash
+   cd client
    npm run dev
 ```
-   The app should now be running at http://localhost:5173.
+🔹 Runs on **http://localhost:5173**.
 
-## Usage
-- Register: Create a new account to start managing your tasks.
-- Login: Log in with your credentials.
-- Manage Tasks: Add, edit, and delete tasks as needed.
+---
 
-## Screenshots
+## 🎮 Usage
 
-![ToDoApp](client/public/Preview.JPG)
+1. **Register**: Create a new account.
+2. **Login**: Access your task manager.
+3. **Manage Tasks**: Add, edit, and delete tasks.
 
-## Contributing
-Feedback and suggestions are always welcome! If you have any ideas for improving the app, feel free to:
+---
 
-1. Fork the repository.
-2. Create a new branch (git checkout -b feature/your-feature-name).
-3. Commit your changes (git commit -m 'Add new feature').
-4. Push to the branch (git push origin feature/your-feature-name).
-5. Open a Pull Request.
+## 🖼 Screenshots
+
+![To-Do App](client/public/Preview.JPG)
+
+---
+
+## 🛠 Future Enhancements
+
+🔹 **Unit Testing** with Jest.  
+🔹 **Swagger API Documentation**.  
+🔹 **Caching Mechanism** for improved performance.  
+🔹 **Logging System** using Winston.  
+🔹 **Advanced Error Handling** and security best practices.  
+
+---
+
+## 🤝 Contributing
+
+Feedback and contributions are always welcome! To contribute:
+
+1. **Fork** the repository.
+2. Create a **feature branch** (`git checkout -b feature/your-feature-name`).
+3. **Commit** your changes (`git commit -m 'Add new feature'`).
+4. **Push** to your branch (`git push origin feature/your-feature-name`).
+5. Open a **Pull Request**.
+
+---
+
+## 📜 License
+
+This project is under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+
 
 ## License
 
