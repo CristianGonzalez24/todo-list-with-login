@@ -126,9 +126,3 @@ Feedback and contributions are always welcome! To contribute:
 ## 📜 License
 
 This project is under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-
-
-## License
-
-This project is under the MIT License - see the [LICENSE](LICENSE) file for more details.
