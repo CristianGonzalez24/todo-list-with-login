@@ -41,6 +41,7 @@ A **To-Do App** designed to help users keep track of their tasks. It allows user
 Before running the project, make sure you have:
 
 - **Node.js** (v14 or higher)
+- **Npm package manager** (v11 or higher)
 - **MongoDB** (local instance or MongoDB Atlas)
 
 ---
@@ -67,8 +68,31 @@ Before running the project, make sure you have:
 
 ### 3️⃣ Configure Environment Variables
 Create a `.env` file in the **root directory** and add:
+
+## 📦 Database Setup (MongoDB)
+You can use **MongoDB Atlas (Cloud)** or **MongoDB locally**.
+
+### Option 1️⃣: MongoDB Atlas (Recommended)
+1. Create an account on [MongoDB Atlas](https://www.mongodb.com/atlas).
+2. Create a new cluster and get your **MongoDB URI**.
+3. Add the connection string to your `.env` file:
+```sh
+   MONGO_URI_ATLAS=mongodb+srv://your_user:your_password@cluster.mongodb.net/your_db_name
+```
+
+### Option 2️⃣: MongoDB Local (If installed)
+1. Install MongoDB from official site [MongoDB](https://www.mongodb.com/try/download/community).
+2. Start the MongoDB service:
 ```bash
-   MONGO_URI=your_mongodb_uri
+   mongod --dbpath /path/to/your/database
+```
+3. Use the local connection string in your .env file:
+```sh
+   MONGO_URI_LOCAL=mongodb://127.0.0.1:27017/your_db_name
+```
+
+Authentication Secret
+```sh
    JWT_SECRET=your_jwt_secret
 ```
 
