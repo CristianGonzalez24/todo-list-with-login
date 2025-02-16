@@ -115,7 +115,7 @@ npm run dev
 2. **Login**: Access your task manager.
 3. **Manage Tasks**: Add, edit, and delete tasks.
 
-## 🖼 Screenshots
+## 📷 Screenshots
 
 ![To-Do App](docs/toDo-app-screenshot.webp)
 
