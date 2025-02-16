@@ -2,7 +2,7 @@
 
 A **To-Do App** designed to help users keep track of their tasks. It allows users to add, edit, and delete tasks while ensuring secure authentication for personalized task management.
 
-## 🚀 Features
+## ✨ Features
 
 ✅ **Task Management**  
 ✔ Add, edit, and delete tasks.  
@@ -19,7 +19,7 @@ A **To-Do App** designed to help users keep track of their tasks. It allows user
 ✅ **Responsive UI**  
 ✔ Clean and modern interface built with React & Tailwind CSS.
 
-## 🛠 Tech Stack
+## 🚀 Tech Stack
 
 | Technology    | Purpose                       |
 |--------------|-----------------------------|
@@ -62,7 +62,7 @@ Before running the project, make sure you have:
 
 ---
 
-### 3️⃣ Configure Environment Variables
+### 🌎 Configure Environment Variables
 Create a `.env` file in the **root directory** and add:
 
 ## 📦 Database Setup (MongoDB)
@@ -119,7 +119,7 @@ npm run dev
 
 ![To-Do App](docs/toDo-app-screenshot.webp)
 
-## 🛠 Future Enhancements
+## 📆 Future Enhancements
 
 🔹 **Unit Testing** with Jest.  
 🔹 **Swagger API Documentation**.  
@@ -127,7 +127,7 @@ npm run dev
 🔹 **Logging System** using Winston.  
 🔹 **Advanced Error Handling** and security best practices.  
 
-## 🤝 Contributing
+## 😎 Contributing
 
 Feedback and contributions are always welcome! To contribute:
 
