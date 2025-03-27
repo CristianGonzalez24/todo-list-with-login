@@ -73,7 +73,7 @@ You can use **MongoDB Atlas (Cloud)** or **MongoDB locally**.
 2. Create a new cluster and get your **MongoDB URI**.
 3. Add the connection string to your `.env` file:
 ```sh
-MONGO_URI_ATLAS=mongodb+srv://your_user:your_password@cluster.mongodb.net/your_db_name
+MONGO_URI_ATLAS=mongodb+srv...
 ```
 
 ### Option 2️⃣: MongoDB Local (If installed)
